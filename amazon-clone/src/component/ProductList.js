@@ -3,19 +3,18 @@ import Card from './Card';
 import './ProductList.scss';
 import { useStateValue } from './StateProvider';
 const ProductList = () => {
-    const {productList} = useStateValue();
-    console.log(productList);
+    const {initialState} = useStateValue();
     return (
         <div className='productList'>
             {
-                productList.map((item, index)=>{
+                initialState.productList.map((item, index)=>{
                     return(
                         <Card key={index} {...item}/>
                     )
                 })
             }
            
-           
+          
         </div>
     )
 }
